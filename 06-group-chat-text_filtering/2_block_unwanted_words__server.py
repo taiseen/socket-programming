@@ -47,12 +47,14 @@ def filtering_words_system(clint_input_text):
     return block_word_info
 
 
+
 def handle(client):
     while True:
         try:
             #receiving 1024 bytes
             message = client.recv(1024).decode('ascii')
 
+            # 🟡🟡🟡 Custom function call here...
             broadcast(filtering_words_system(message))
 
         except:
@@ -66,6 +68,7 @@ def handle(client):
             broadcast(f"{nickname} left the chat!".encode('ascii'))
             nicknames.remove(nickname)
             break
+
 
 
 def receive():
@@ -97,6 +100,7 @@ def receive():
 
         thread = threading.Thread(target=handle, args=(client,))
         thread.start()
+
 
 
 #main method

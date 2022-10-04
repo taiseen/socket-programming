@@ -40,9 +40,10 @@ def brand_name_counter(sms):
                 # increment that brand name count value
                 brandName[brand] += 1
 
-                # get value for bar chat display
+                # set value for bar chat display
                 a.append(brandName[brand])
                 b.append(brand)
+
 
 # data represent at bar chat 
 def bar_chat_data_display():
@@ -68,7 +69,7 @@ def handle(client):
             # receiving 1024 bytes
             message = client.recv(1024)
 
-            # custom function call here...
+            # 🟡🟡🟡 Custom function call here...
             brand_name_counter(message)
 
             broadcast(message)
@@ -84,6 +85,8 @@ def handle(client):
             nicknames.remove(nickname)
 
             print(brandName)
+            
+            # 🟡🟡🟡 Custom function call here...
             bar_chat_data_display()
             break
 

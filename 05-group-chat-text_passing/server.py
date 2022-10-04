@@ -31,7 +31,7 @@ def handle(client):
             broadcast(message)
 
         except:
-            # find out the index of the failed client frm the clients list
+            # find out the index of the failed client from the clients list
             index = clients.index(client)
             clients.remove(client)
             client.close()

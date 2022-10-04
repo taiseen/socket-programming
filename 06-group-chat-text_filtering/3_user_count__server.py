@@ -17,15 +17,21 @@ clients = []
 nicknames = []
 
 
-
 # total user count that present at system...
 def total_user_count(userName):
+    
+    # display info at CLI
     if userName:
         print('------------------------------------')
         print('Total user present :', len(nicknames))
         print('Users name are :', nicknames)
         print('------------------------------------')
 
+    # store in extra document
+    if len(nicknames) != 0:
+        with open('user_list.txt', 'w') as file_handle:
+            for f in nicknames:
+                file_handle.write(f'{f}\n')
 
 
 # broadcasting messages from the server to all the clients
